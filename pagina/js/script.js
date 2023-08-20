@@ -19,7 +19,6 @@ function loadPage(pageUrl) {
                 pageContent.innerHTML = data;
                 // Carrega os dados da API apenas quando a página colaboradores.php é carregada
                 if (pageUrl === 'colaboradores.php') {
-                    //menuToggle.click();
                     fetchColaboradoresData();
                 }
                 // Carrega os dados da API apenas quando a página produtos.php é carregada
@@ -62,9 +61,6 @@ function fetchColaboradoresData() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            //const tableBody = document.getElementById('tableClient');
-            // Limpa a tabela antes de preencher com os dados atualizados
-            //tableBody.innerHTML = '';
 
             // Loop pelos dados recebidos e cria uma nova linha na tabela para cada colaborador
             data.forEach(colaborador => {
@@ -92,13 +88,9 @@ function fetchProdutosData() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            //const tableBody = document.getElementById('tableClient');
-            // Limpa a tabela antes de preencher com os dados atualizados
-            //tableBody.innerHTML = '';
 
             // Loop pelos dados recebidos e cria uma nova linha na tabela para cada colaborador
             data.forEach(produto => {
-                //const newRow = tableBody.insertRow();
                 const newRow = document.createElement('tr');
                     newRow.innerHTML = `
                     <td>${produto.id}</td>
@@ -212,13 +204,11 @@ function closeForm() {
 //Criar usuario
 function salvarForm() {
     if(document.getElementById('nome').value != "" && document.getElementById('senha').value != ""){
-    //cad = '{"id":"","nome":"' + document.getElementById('nome').value + '","senha":"' + document.getElementById('senha').value + '"}';
     cad = {nome : document.getElementById('nome').value, senha : document.getElementById('senha').value, perfil : document.getElementById('perfil').value};
     console.log(cad);
 
     fetch('http://' + apiUrl + ':8080/user/save', {
         method: 'POST',
-        //headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -243,7 +233,7 @@ function salvarFormProduto() {
     cad = {
         produto: document.getElementById('nomeProduto').value, 
         marca: document.getElementById('marcaProduto').value,
-        url: imgProduto.value,//urlImagem[Object.keys(urlImagem).length -1], //document.getElementById('myfile').value,
+        url: imgProduto.value,
         preco: document.getElementById('precoProduto').value,
     }
     console.log(cad);
@@ -361,7 +351,7 @@ function editarProduto(idProduto) {
             id: idProduto, 
             produto: document.getElementById('nomeProduto').value, 
             marca: document.getElementById('marcaProduto').value,
-            url: urlImagem[Object.keys(urlImagem).length -1], //document.getElementById('myfile').value,
+            url: imgProduto.value,
             preco: document.getElementById('precoProduto').value
         }
         console.log(cad);
@@ -394,6 +384,7 @@ function editarProduto(idProduto) {
             document.getElementById('nomeProduto').value = data.produto;
             document.getElementById('marcaProduto').value = data.marca;
             document.getElementById('imagemProduto').value = data.url;
+            document.getElementById('image').src = "img/" + data.url;
             document.getElementById('precoProduto').value = data.preco;
         });
   
