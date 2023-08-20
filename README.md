@@ -4,13 +4,14 @@ foram feitas mudanças onde foi implementada uma api utilizando java com spring 
 incerssão, leitura, edição, exclusão e também possibilita consultas e o controle para o envio e arquivos de imagens ao cadastrar novos produtos e tambem a exclusão dos arquivos quando solicitado a api.
 
 # Instruções
-Instale o Xampp e inicie o Apache e o MySQL server, copie o conteudo da pasta src para a pasta htdocs do Xampp.
-Criação do Banco de dados abra o phpmyadmin "http://localhost/phpmyadmin/" crie um banco chamado "colaboradores", então em importar e abra o arquivo clientes.sql da pasta sql e faça a importação.
+Instale o Xampp e inicie o Apache e o MySQL server, copie o conteudo da pasta pagina para a pasta htdocs do Xampp.
+Criação do Banco de dados abra o phpmyadmin "http://localhost/phpmyadmin/" crie um banco chamado "apiSpring", então em importar e abra o arquivo produtos.sql da pasta sql e faça a importação. 
+Com o MySql do Xampp rodando abra a pasta "apiSpring" com o InteliJ e execute a aplicação.
 
 # Imagens do Sistema
 
 - Tela de Login
-<img width="50%" src="https://github.com/HeltonEng/DesafioEstagioWeb/blob/main/img/Login.jpg"/>
+<img width="50%" src="https://github.com/HeltonEng/springapi/blob/main/img/login.jpeg"/>
 
 - Tela de Principal
 <img width="50%" src="https://github.com/HeltonEng/springapi/blob/main/img/inicial.jpeg"/> 
