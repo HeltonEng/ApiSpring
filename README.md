@@ -5,7 +5,7 @@ incerssão, leitura, edição, exclusão e também possibilita consultas e o con
 
 # Instruções
 Instale o Xampp e inicie o Apache e o MySQL server, copie o conteudo da pasta pagina para a pasta htdocs do Xampp.
-Criação do Banco de dados abra o phpmyadmin "http://localhost/phpmyadmin/" crie um banco chamado "apiSpring", então em importar e abra o arquivo produtos.sql da pasta sql e faça a importação. 
+Criação do Banco de dados abra o phpmyadmin "http://localhost/phpmyadmin/" crie um banco chamado "apiSpring", então em importar e abra o arquivo springapi.sql da pasta sql e faça a importação. 
 Com o MySql do Xampp rodando abra a pasta "apiSpring" com o InteliJ e execute a aplicação.
 
 # Imagens do Sistema
